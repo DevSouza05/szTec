@@ -1,4 +1,4 @@
-/* Reset de Estilos */
+
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Open Sans', sans-serif;
-    background-color: #F4F4F4; /* Fundo neutro */
+    background-color: #F4F4F4; 
     color: #333;
     line-height: 1.6;
 }
@@ -17,104 +17,120 @@ header {
     position: relative;
     width: 100%;
     height: 100vh;
-    background-image: url('https://via.placeholder.com/1200x800'); /* Altere para a imagem de sua escolha */
+    background-image: url('../banner.png'); 
     background-size: cover;
-    background-position: center;
+    background-position: center; 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: white;
-    padding-top: 100px; /* Ajuste para distanciar do topo */
+    padding-top: 100px;
     animation: fadeIn 1.5s ease-out;
+    z-index: 1; 
 }
 
-/* Animação de Fade-in para as seções */
+
+header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1; 
+}
+
+
 @keyframes fadeIn {
     0% { opacity: 0; transform: translateY(20px); }
     100% { opacity: 1; transform: translateY(0); }
 }
-
-/* Navegação */
+/* Navbar */
 .navbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 10;
+    padding: 10px 20px;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .navbar .logo h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
     color: white;
-    animation: slideInLeft 1s ease-out;
+    font-size: 24px;
+    margin: 0;
+}
+
+.navbar nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar nav ul li {
+    margin: 0 15px;
+}
+
+.navbar nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+.navbar nav ul li a:hover {
+    background-color: #575757;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    .navbar nav {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #333;
+        z-index: 1000;
+    }
+
+    .navbar nav.active {
+        display: block;
+    }
+
+    .navbar nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar nav ul li {
+        width: 100%;
+        text-align: left;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
 }
 
 /* Animação do Logo */
 @keyframes slideInLeft {
     0% { opacity: 0; transform: translateX(-50px); }
     100% { opacity: 1; transform: translateX(0); }
-}
-
-/* Menu Hamburguer */
-.menu-toggle {
-    display: none;
-    cursor: pointer;
-}
-
-.menu-toggle i {
-    color: white;
-    font-size: 2rem;
-}
-
-/* Menu Responsivo */
-@media (max-width: 768px) {
-    .navbar nav {
-        display: none;
-        width: 100%;
-        position: absolute;
-        top: 80px; /* Ajuste para a posição do menu */
-        left: 0;
-        background-color: rgba(0, 0, 0, 0.9);
-        text-align: center;
-        padding-top: 10px;
-        animation: slideInDown 0.5s ease-out;
-    }
-
-    @keyframes slideInDown {
-        0% { opacity: 0; transform: translateY(-30px); }
-        100% { opacity: 1; transform: translateY(0); }
-    }
-
-    .navbar nav ul {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .navbar nav ul li a {
-        font-size: 1.5rem;
-        color: #e74c3c; /* Cor vibrante de links */
-        transition: color 0.3s ease;
-    }
-
-    .navbar nav ul li a:hover {
-        color: #1ABC9C; /* Cor de hover */
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .navbar nav.active {
-        display: block;
-    }
 }
 
 /* Hero - Seção de Introdução */
@@ -297,6 +313,12 @@ header {
     width: 30%;
     text-align: center;
     margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.price-card:hover {
+    transform: translateY(-10px) scale(1.05); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .price-card h3 {
@@ -327,6 +349,7 @@ header {
     border-radius: 30px;
     font-size: 1rem;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .price-card .btn:hover {
