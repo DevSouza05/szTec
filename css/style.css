@@ -7,33 +7,159 @@
 
 body {
     font-family: 'Open Sans', sans-serif;
-    background-color: #f4f4f4;
+    background-color: #F4F4F4; /* Fundo neutro */
     color: #333;
     line-height: 1.6;
 }
 
 /* Cabeçalho */
 header {
-    background: linear-gradient(135deg, #e74c3c, #f39c12); /* Gradiente suave */
-    color: #fff;
-    padding: 80px 20px;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('https://via.placeholder.com/1200x800'); /* Altere para a imagem de sua escolha */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    color: white;
+    padding-top: 100px; /* Ajuste para distanciar do topo */
+    animation: fadeIn 1.5s ease-out;
 }
 
-header h1 {
+/* Animação de Fade-in para as seções */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Navegação */
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+.navbar .logo h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+    animation: slideInLeft 1s ease-out;
+}
+
+/* Animação do Logo */
+@keyframes slideInLeft {
+    0% { opacity: 0; transform: translateX(-50px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+/* Menu Hamburguer */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-toggle i {
+    color: white;
+    font-size: 2rem;
+}
+
+/* Menu Responsivo */
+@media (max-width: 768px) {
+    .navbar nav {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 80px; /* Ajuste para a posição do menu */
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.9);
+        text-align: center;
+        padding-top: 10px;
+        animation: slideInDown 0.5s ease-out;
+    }
+
+    @keyframes slideInDown {
+        0% { opacity: 0; transform: translateY(-30px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .navbar nav ul {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .navbar nav ul li a {
+        font-size: 1.5rem;
+        color: #e74c3c; /* Cor vibrante de links */
+        transition: color 0.3s ease;
+    }
+
+    .navbar nav ul li a:hover {
+        color: #1ABC9C; /* Cor de hover */
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar nav.active {
+        display: block;
+    }
+}
+
+/* Hero - Seção de Introdução */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+.hero h1 {
     font-size: 4vw;
     margin-bottom: 20px;
 }
 
-header p {
+.hero p {
     font-size: 2vw;
+    margin-bottom: 30px;
+}
+
+.hero .btn {
+    background-color: #E74C3C;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    animation: fadeIn 2s ease-out;
+}
+
+.hero .btn:hover {
+    background-color: #C0392B;
 }
 
 /* Seção Sobre */
 .about {
-    padding: 60px 0;
+    padding: 60px 20px;
     background-color: #fff;
     text-align: center;
+    animation: fadeIn 2s ease-out;
 }
 
 .about h2 {
@@ -44,18 +170,26 @@ header p {
 .profile-img img {
     width: 200px;
     border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.profile-img img:hover {
+    transform: scale(1.1);
 }
 
 /* Testemunhos */
 .testimonials {
     background-color: #ecf0f1;
     padding: 60px 20px;
+    animation: fadeIn 2.5s ease-out;
 }
 
 .testimonials h2 {
     font-size: 2.5rem;
     margin-bottom: 40px;
     text-align: center;
+    color: #2C3E50;
 }
 
 .testimonial-cards {
@@ -73,7 +207,13 @@ header p {
     width: 30%;
     text-align: center;
     margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards;
 }
+
+.testimonial-card:nth-child(1) { animation-delay: 0.2s; }
+.testimonial-card:nth-child(2) { animation-delay: 0.4s; }
+.testimonial-card:nth-child(3) { animation-delay: 0.6s; }
 
 .testimonial-card p {
     font-style: italic;
@@ -181,7 +321,7 @@ header p {
 }
 
 .price-card .btn {
-    background-color: #e74c3c;
+    background-color: #E74C3C;
     color: white;
     padding: 15px;
     border-radius: 30px;
@@ -190,7 +330,7 @@ header p {
 }
 
 .price-card .btn:hover {
-    background-color: #c0392b;
+    background-color: #C0392B;
 }
 
 /* Botão WhatsApp */
@@ -198,7 +338,7 @@ header p {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    background-color: #25d366;
+    background-color: #25D366;
     padding: 18px;
     border-radius: 50%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
@@ -265,7 +405,7 @@ header p {
 }
 
 .modal button {
-    background-color: #e74c3c;
+    background-color: #E74C3C;
     color: white;
     cursor: pointer;
     border: none;
@@ -273,12 +413,12 @@ header p {
 }
 
 .modal button:hover {
-    background-color: #c0392b;
+    background-color: #C0392B;
 }
 
 /* Rodapé */
 footer {
-    background-color: #2c3e50;
+    background-color: #2C3E50;
     color: white;
     padding: 20px;
     text-align: center;
