@@ -1,4 +1,4 @@
-/* Reset de Estilos */
+
 * {
     margin: 0;
     padding: 0;
@@ -7,33 +7,175 @@
 
 body {
     font-family: 'Open Sans', sans-serif;
-    background-color: #f4f4f4;
+    background-color: #F4F4F4; 
     color: #333;
     line-height: 1.6;
 }
 
 /* Cabeçalho */
 header {
-    background: linear-gradient(135deg, #e74c3c, #f39c12); /* Gradiente suave */
-    color: #fff;
-    padding: 80px 20px;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('../banner.png'); 
+    background-size: cover;
+    background-position: center; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    color: white;
+    padding-top: 100px;
+    animation: fadeIn 1.5s ease-out;
+    z-index: 1; 
 }
 
-header h1 {
+
+header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1; 
+}
+
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar .logo h1 {
+    color: white;
+    font-size: 24px;
+    margin: 0;
+}
+
+.navbar nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar nav ul li {
+    margin: 0 15px;
+}
+
+.navbar nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+.navbar nav ul li a:hover {
+    background-color: #575757;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    .navbar nav {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #333;
+        z-index: 1000;
+    }
+
+    .navbar nav.active {
+        display: block;
+    }
+
+    .navbar nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar nav ul li {
+        width: 100%;
+        text-align: left;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* Animação do Logo */
+@keyframes slideInLeft {
+    0% { opacity: 0; transform: translateX(-50px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+/* Hero - Seção de Introdução */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+.hero h1 {
     font-size: 4vw;
     margin-bottom: 20px;
 }
 
-header p {
+.hero p {
     font-size: 2vw;
+    margin-bottom: 30px;
+}
+
+.hero .btn {
+    background-color: #E74C3C;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    animation: fadeIn 2s ease-out;
+}
+
+.hero .btn:hover {
+    background-color: #C0392B;
 }
 
 /* Seção Sobre */
 .about {
-    padding: 60px 0;
+    padding: 60px 20px;
     background-color: #fff;
     text-align: center;
+    animation: fadeIn 2s ease-out;
 }
 
 .about h2 {
@@ -44,18 +186,26 @@ header p {
 .profile-img img {
     width: 200px;
     border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.profile-img img:hover {
+    transform: scale(1.1);
 }
 
 /* Testemunhos */
 .testimonials {
     background-color: #ecf0f1;
     padding: 60px 20px;
+    animation: fadeIn 2.5s ease-out;
 }
 
 .testimonials h2 {
     font-size: 2.5rem;
     margin-bottom: 40px;
     text-align: center;
+    color: #2C3E50;
 }
 
 .testimonial-cards {
@@ -73,7 +223,13 @@ header p {
     width: 30%;
     text-align: center;
     margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards;
 }
+
+.testimonial-card:nth-child(1) { animation-delay: 0.2s; }
+.testimonial-card:nth-child(2) { animation-delay: 0.4s; }
+.testimonial-card:nth-child(3) { animation-delay: 0.6s; }
 
 .testimonial-card p {
     font-style: italic;
@@ -157,6 +313,12 @@ header p {
     width: 30%;
     text-align: center;
     margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.price-card:hover {
+    transform: translateY(-10px) scale(1.05); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .price-card h3 {
@@ -181,16 +343,17 @@ header p {
 }
 
 .price-card .btn {
-    background-color: #e74c3c;
+    background-color: #E74C3C;
     color: white;
     padding: 15px;
     border-radius: 30px;
     font-size: 1rem;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .price-card .btn:hover {
-    background-color: #c0392b;
+    background-color: #C0392B;
 }
 
 /* Botão WhatsApp */
@@ -198,7 +361,7 @@ header p {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    background-color: #25d366;
+    background-color: #25D366;
     padding: 18px;
     border-radius: 50%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
@@ -265,7 +428,7 @@ header p {
 }
 
 .modal button {
-    background-color: #e74c3c;
+    background-color: #E74C3C;
     color: white;
     cursor: pointer;
     border: none;
@@ -273,12 +436,12 @@ header p {
 }
 
 .modal button:hover {
-    background-color: #c0392b;
+    background-color: #C0392B;
 }
 
 /* Rodapé */
 footer {
-    background-color: #2c3e50;
+    background-color: #2C3E50;
     color: white;
     padding: 20px;
     text-align: center;

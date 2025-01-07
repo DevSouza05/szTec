@@ -10,27 +10,45 @@
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>Olá, eu sou Peterson Moraes</h1>
-            <p>Especialista em criação de sites e sistemas para pequenas e médias empresas.</p>
+        <div class="navbar">
+            <div class="logo">
+                <h1>Peterson Moraes</h1>
+            </div>
+        
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class="bx bx-menu"></i>
+            </div>
+            <nav id="navbar">
+                <ul>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#projects">Projetos</a></li>
+                    <li><a href="#prices">Preços</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="hero">
+            <div class="hero-content">
+                <h2>Olá, eu sou Peterson Moraes</h2>
+                <p>Especialista em criação de sites e sistemas para pequenas e médias empresas.</p>
+                <a href="#contact" class="btn">Vamos trabalhar juntos</a>
+            </div>
         </div>
     </header>
 
     <!-- Sobre -->
-    <section class="about">
+    <section id="about" class="about">
         <div class="container">
             <h2>Sobre mim</h2>
             <div class="profile-img">
                 <img src="./Design sem nome.png" alt="Sua Foto">
             </div>
-            <p>Sou desenvolvedor web especializado em criar soluções digitais completas para pequenas e médias empresas.
-                Se você está buscando um site profissional, funcional e de fácil gestão, está no lugar certo! Aqui, a
-                inovação e a qualidade são prioridades.</p>
+            <p>Sou desenvolvedor web especializado em criar soluções digitais completas para pequenas e médias empresas. Se você está buscando um site profissional, funcional e de fácil gestão, está no lugar certo! Aqui, a inovação e a qualidade são prioridades.</p>
         </div>
     </section>
 
     <!-- Testemunhos -->
-    <section class="testimonials">
+    <section id="testimonials" class="testimonials">
         <div class="container">
             <h2>O que os clientes dizem</h2>
             <div class="testimonial-cards">
@@ -54,7 +72,7 @@
     </section>
 
     <!-- Projetos -->
-    <section class="projects">
+    <section id="projects" class="projects">
         <div class="container">
             <h2>Meus Projetos</h2>
             <div class="project-gallery">
@@ -75,7 +93,7 @@
     </section>
 
     <!-- Preços -->
-    <section class="price-table">
+    <section id="prices" class="price-table">
         <div class="container">
             <h2>Meus Planos de Sites</h2>
             <p>Escolha o plano que melhor se adapta ao seu negócio!</p>
@@ -95,7 +113,7 @@
 
                 <div class="price-card featured">
                     <h3>Plano Intermediário</h3>
-                    <p class="price">R$ 1500</p>
+                    <p class="price">R$ 1.500</p>
                     <ul>
                         <li><i class="bx bx-check"></i> Até 5 Páginas</li>
                         <li><i class="bx bx-check"></i> Design Responsivo</li>
@@ -117,7 +135,6 @@
                         <li><i class="bx bx-check"></i> SEO Avançado</li>
                         <li><i class="bx bx-check"></i> Formulário de contato</li>
                         <li><i class="bx bx-check"></i> Botão de WhatsApp</li>
-                        <li><i class="bx bx-check"></i> SEO básico</li>
                         <li><i class="bx bx-check"></i> Google maps</li>
                         <li><i class="bx bx-check"></i> Integração com e-commerce</li>
                     </ul>
@@ -139,8 +156,8 @@
         </div>
     </footer>
 
-       <!-- Modal de Contato -->
-       <div id="modalContact" class="modal">
+    <!-- Modal de Contato -->
+    <div id="modalContact" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal()">&times;</span>
             <h2>Formulário de Contratação</h2>

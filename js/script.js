@@ -21,3 +21,10 @@ window.onclick = function(event) {
         closeModal();
     }
 }
+
+
+function toggleMenu() {
+    const navbar = document.getElementById("navbar");
+    navbar.classList.toggle("active");
+}
+
