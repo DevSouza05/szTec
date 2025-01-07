@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Criação de Sites e Sistemas</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Olá, eu sou Peterson Moraes</h1>
+            <p>Especialista em criação de sites e sistemas para pequenas e médias empresas.</p>
+        </div>
+    </header>
+
+    <!-- Sobre -->
+    <section class="about">
+        <div class="container">
+            <h2>Sobre mim</h2>
+            <div class="profile-img">
+                <img src="./Design sem nome.png" alt="Sua Foto">
+            </div>
+            <p>Sou desenvolvedor web especializado em criar soluções digitais completas para pequenas e médias empresas.
+                Se você está buscando um site profissional, funcional e de fácil gestão, está no lugar certo! Aqui, a
+                inovação e a qualidade são prioridades.</p>
+        </div>
+    </section>
+
+    <!-- Testemunhos -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>O que os clientes dizem</h2>
+            <div class="testimonial-cards">
+                <div class="testimonial-card">
+                    <p>"O site ficou incrível! Superou nossas expectativas. Recomendo de olhos fechados!"</p>
+                    <h4>Maria Silva</h4>
+                    <span>Empresária</span>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Peterson entregou o projeto no prazo e com um design impecável. O atendimento foi excelente."</p>
+                    <h4>João Oliveira</h4>
+                    <span>CEO da Tech Solutions</span>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Excelente profissional! Sempre atento às necessidades do meu negócio. Site funcional e bonito!"</p>
+                    <h4>Ana Souza</h4>
+                    <span>Empreendedora</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projetos -->
+    <section class="projects">
+        <div class="container">
+            <h2>Meus Projetos</h2>
+            <div class="project-gallery">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/400x300" alt="Projeto 1">
+                    <h4>Site para Restaurante</h4>
+                </div>
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/400x300" alt="Projeto 2">
+                    <h4>Loja Virtual</h4>
+                </div>
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/400x300" alt="Projeto 3">
+                    <h4>Blog de Viagem</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preços -->
+    <section class="price-table">
+        <div class="container">
+            <h2>Meus Planos de Sites</h2>
+            <p>Escolha o plano que melhor se adapta ao seu negócio!</p>
+            <div class="cards">
+                <div class="price-card">
+                    <h3>Plano Básico</h3>
+                    <p class="price">R$ 800</p>
+                    <ul>
+                        <li><i class="bx bx-check"></i> 1 Página</li>
+                        <li><i class="bx bx-check"></i> Design Responsivo</li>
+                        <li><i class="bx bx-check"></i> Formulário de contato</li>
+                        <li><i class="bx bx-check"></i> Botão de WhatsApp</li>
+                        <li><i class="bx bx-check"></i> Google maps</li>
+                    </ul>
+                    <button class="btn" onclick="openModal()">Contratar</button>
+                </div>
+
+                <div class="price-card featured">
+                    <h3>Plano Intermediário</h3>
+                    <p class="price">R$ 1500</p>
+                    <ul>
+                        <li><i class="bx bx-check"></i> Até 5 Páginas</li>
+                        <li><i class="bx bx-check"></i> Design Responsivo</li>
+                        <li><i class="bx bx-check"></i> Formulário de contato</li>
+                        <li><i class="bx bx-check"></i> Botão de WhatsApp</li>
+                        <li><i class="bx bx-check"></i> Suporte por 2 meses</li>
+                        <li><i class="bx bx-check"></i> SEO básico</li>
+                        <li><i class="bx bx-check"></i> Google maps</li>
+                    </ul>
+                    <button class="btn" onclick="openModal()">Contratar</button>
+                </div>
+
+                <div class="price-card">
+                    <h3>Plano Premium</h3>
+                    <p class="price">R$ 2.000</p>
+                    <ul>
+                        <li><i class="bx bx-check"></i> Até 10 Páginas</li>
+                        <li><i class="bx bx-check"></i> Design Responsivo</li>
+                        <li><i class="bx bx-check"></i> SEO Avançado</li>
+                        <li><i class="bx bx-check"></i> Formulário de contato</li>
+                        <li><i class="bx bx-check"></i> Botão de WhatsApp</li>
+                        <li><i class="bx bx-check"></i> SEO básico</li>
+                        <li><i class="bx bx-check"></i> Google maps</li>
+                        <li><i class="bx bx-check"></i> Integração com e-commerce</li>
+                    </ul>
+                    <button class="btn" onclick="openModal()">Contratar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Botão de WhatsApp -->
+    <a href="https://wa.me/5513991069500" target="_blank" class="whatsapp-btn">
+        <i class="bx bxl-whatsapp"></i>
+    </a>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 - Peterson Moraes. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Modal de Contato -->
+    <div id="modalContact" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2>Formulário de Contratação</h2>
+            <form action="processa_contratacao.php" method="POST">
+                <label for="name">Seu Nome:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Seu E-mail:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Seu Telefone:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="message">Mensagem:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
