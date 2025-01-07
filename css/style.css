@@ -219,7 +219,7 @@ header p {
 .modal {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 9999;
     left: 0;
     top: 0;
     width: 100%;
@@ -234,6 +234,7 @@ header p {
     width: 80%;
     max-width: 600px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    margin: 5% auto;
 }
 
 .close-btn {
@@ -247,6 +248,32 @@ header p {
 .close-btn:hover,
 .close-btn:focus {
     color: black;
+}
+
+.modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.modal input, .modal textarea, .modal button {
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.modal button {
+    background-color: #e74c3c;
+    color: white;
+    cursor: pointer;
+    border: none;
+    font-size: 1.1rem;
+}
+
+.modal button:hover {
+    background-color: #c0392b;
 }
 
 /* Rodapé */
